@@ -1,4 +1,4 @@
-﻿using Data.Entities;
+﻿using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data
@@ -49,6 +49,9 @@ namespace Data
                 .HasOne(bb => bb.Student)
                 .WithMany(s => s.BorrowedBooks)
                 .HasForeignKey(bb => bb.StudentID);
+
+            DataSeeder.SeedData(modelBuilder);
         }
+
     }
 }

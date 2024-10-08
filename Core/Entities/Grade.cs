@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Data.Entities
+namespace Core.Entities
 {
     [Table("Grades", Schema = "SchoolSystem")]
     public class Grade
@@ -26,7 +21,7 @@ namespace Data.Entities
         [ForeignKey(nameof(StudentID))]
         public Student Student { get; set; }
 
-        public int Grade1 { get; set; }
-        public int Grade2 { get; set; }
+        public double Grade1 { get; set; }
+        public double Grade2 { get; set; }
     }
 }

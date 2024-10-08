@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Interfaces;
+using Data.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Data
@@ -9,6 +11,8 @@ namespace Data
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("Data Source=(localdb)\\localdb;Initial Catalog='SchoolSystem'",
                 x => x.MigrationsHistoryTable("__EFMigrationsHistory", "SchoolSystem")));
+
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Data.Entities
+namespace Core.Entities
 {
     [Table("Users", Schema = "SchoolSystem")]
     public class User
@@ -19,7 +14,7 @@ namespace Data.Entities
         public string Username { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(60)]
         public string Password { get; set; }
 
         [MaxLength(50)]
